@@ -5,7 +5,7 @@
             {{input type="checkbox" name="required" checked=(mut field.required)}} Required
         </label>
         {{#help-icon}}
-            Only extract items that have this field. All samples using this data format will be affected
+            只解析有该字段的内容项。所有使用该数据的样例都会被影响。
         {{/help-icon}}
     </div>
     <div class="checkbox">
@@ -13,7 +13,7 @@
             {{input type="checkbox" name="vary" checked=(mut field.vary)}} Vary
         </label>
         {{#help-icon}}
-            The value of this field will be ignored when checking for duplicate items
+            检查重复项时，将忽略此字段的值
         {{/help-icon}}
     </div>
 </form>

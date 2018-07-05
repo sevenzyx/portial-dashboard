@@ -1,7 +1,7 @@
 {{#if editing }}
 {{#if addingNew}}
     <div class="form-group form-group-sm">
-        <label for="actionType" class="col-sm-4 control-label">Action type</label>
+        <label for="actionType" class="col-sm-4 control-label">动作类型</label>
         <div class="col-sm-7">
             <select onchange={{action (mut editing.type) value="target.value"}}>
                 {{#each actionTypes as |type|}}
@@ -11,7 +11,7 @@
         </div>
         <div class="btn-center">
             <button {{action "addContinue"}} class="btn btn-primary fa fa-icon fa-plus">
-                Continue
+                继续
             </button>
         </div>
     </div>
@@ -19,14 +19,14 @@
 <form class="form-horizontal">
     {{#if (eq editing.type "wait")}}
         <div class="form-group form-group-sm">
-            <label for="actionType" class="col-sm-4 control-label">Timeout (ms)</label>
+            <label for="actionType" class="col-sm-4 control-label">超时 (ms)</label>
             <div class="col-sm-7">
                 {{input value=editing.timeout pattern="^[0-9]+$" class="form-control" }}
             </div>
         </div>
     {{else}}
         <div class="form-group form-group-sm">
-            <label for="actionType" class="col-sm-4 control-label">Selector</label>
+            <label for="actionType" class="col-sm-4 control-label">选择器</label>
             <div class="col-sm-7">
                 {{input value=editing.selector class="form-control" }}
             </div>
@@ -34,7 +34,7 @@
     {{/if}}
     {{#if (eq editing.type "set")}}
         <div class="form-group form-group-sm">
-            <label for="actionType" class="col-sm-4 control-label">Value</label>
+            <label for="actionType" class="col-sm-4 control-label">值</label>
             <div class="col-sm-7">
                 {{input value=editing.value class="form-control" }}
             </div>
@@ -42,16 +42,16 @@
     {{/if}}
 </form>
     <div class="form-group form-group-sm">
-        <label for="actionType" class="control-label">Run only in pages matching</label>
+        <label for="actionType" class="control-label">仅在匹配的页面中运行</label>
         {{input value=editing.accept class="form-control" }}
     </div>
     <div class="form-group form-group-sm">
-        <label for="actionType" class="control-label">Don't run in pages matching</label>
+        <label for="actionType" class="control-label">不要在匹配的页面中运行</label>
         {{input value=editing.reject class="form-control" }}
     </div>
     <div class="btn-center">
         <button {{action "back"}} class="btn btn-primary fa fa-icon fa-check">
-            Back
+            返回
         </button>
     </div>
 {{/if}}
@@ -76,7 +76,7 @@
                     {{/tree-list-item}}
                 {{else}}
                     {{#tree-list-item}}
-                        {{#list-item-text}} No actions have been recorded yet{{/list-item-text}}
+                        {{#list-item-text}} 尚未记录任何动作{{/list-item-text}}
                     {{/tree-list-item}}
                 {{/each}}
             {{/if}}

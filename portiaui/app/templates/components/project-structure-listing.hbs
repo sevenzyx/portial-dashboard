@@ -2,20 +2,18 @@
     {{#tree-list-item hasChildren=true as |options|}}
         {{#if (eq options.section "item")}}
             {{#list-item-text class="title"}}
-              Spider{{#animation-container class="inline" hide=currentSpider setHeight=false}}s {{/animation-container}}&nbsp;{{pagination}}
+              爬虫{{#animation-container class="inline" hide=currentSpider setHeight=false}}s {{/animation-container}}&nbsp;{{pagination}}
                 {{#animation-container class="inline" setHeight=false}}
                     {{#help-icon}}
-                        Spiders
+                        爬虫
                         <p>
-                            A spider crawls web pages to extract data.
+                            爬虫抓取网页以提取数据。
                         </p>
                         <p>
-                            It is most common to create a spider for each website you wish to crawl, but
-                            a single spider can also crawl more than one website.
+                            最常见的是为每个要抓取的网站创建一个爬虫，但是一个爬虫也可以抓取多个网站。
                         </p>
                         <p>
-                            To create a spider first visit a web page that you would like to start
-                            crawling from.
+                            要创建爬虫，请首先访问您要开始抓取的网页.
                         </p>
                     {{/help-icon}}
                 {{/animation-container}}
@@ -24,7 +22,7 @@
             {{#if currentSpider}}
                 {{#animation-container}}
                     {{#link-to 'projects.project' project class='inline project-change'}}
-                        Show all spiders
+                        显示所有爬虫
                     {{/link-to}}
                 {{/animation-container}}
             {{else}}
@@ -35,14 +33,13 @@
         {{else if (eq options.section "subtrees")}}
             {{#tree-list-item hide=(or project.spiders.isPending project.spiders.length) as |options|}}
                 {{#list-item-text class="text-center"}}
-                    This project has no spiders
+                    本项目没有爬虫
                 {{/list-item-text}}
             {{/tree-list-item}}
             {{#tree-list-item hide=(or project.spiders.isPending project.spiders.length) class="help" as |options|}}
                 <div class="alert alert-info" role="alert">
                     <p>
-                        To create a spider first visit a web page that you would like to start
-                        crawling from.
+                        要创建爬虫，请首先访问您要开始抓取的网页。
                     </p>
                 </div>
             {{/tree-list-item}}
@@ -51,7 +48,7 @@
                 {{#tree-list-item}}
                     <input
                      class='form-control'
-                     placeholder='Search for your spider'
+                     placeholder='搜索爬虫'
                      value={{spiderSearch}}
                      oninput={{perform filterSpiders
                               sortedSpiders
@@ -93,20 +90,18 @@
     {{#tree-list-item hasChildren=true as |options|}}
         {{#if (eq options.section "item")}}
             {{#list-item-text class="title"}}
-                Data Format{{#animation-container class="inline" hide=currentSchema setHeight=false}}s{{/animation-container}}
+                数据格式{{#animation-container class="inline" hide=currentSchema setHeight=false}}s{{/animation-container}}
                 {{#animation-container class="inline" setHeight=false}}
                     {{#help-icon}}
-                        Data Formats
+                        数据格式
                         <p>
-                            A data format describes the data that you want to extract.
+                            数据格式描述了要提取的数据。
                         </p>
                         <p>
-                            Spiders can share a data format to extract the same logical data type from
-                            different web pages.
+                            爬虫可以共享数据格式以从不同的网页中提取相同的逻辑数据类型。
                         </p>
                         <p>
-                            You can create data formats in advance, but you can also create them later,
-                            while annotating the data on a web page.
+                            您可以提前创建数据格式，但也可以稍后创建它们，同时在网页上注释数据。
                         </p>
                     {{/help-icon}}
                 {{/animation-container}}
@@ -114,18 +109,18 @@
             {{#if currentSchema}}
                 {{#animation-container}}
                     {{#link-to 'projects.project' project class='inline project-change'}}
-                        Show all schemas
+                        显示所有schema
                     {{/link-to}}
                 {{/animation-container}}
             {{else}}
-                {{#tooltip-container tooltipFor="add-schema-button" text="Create a new Schema" tooltipContainer='body'}}
+                {{#tooltip-container tooltipFor="add-schema-button" text="创建新Schema" tooltipContainer='body'}}
                     {{list-item-icon id="add-schema-button" icon='add' action=(action 'addSchema')}}
                 {{/tooltip-container}}
             {{/if}}
         {{else if (eq options.section "subtrees")}}
             {{#tree-list-item hide=(or project.schemas.isPending project.schemas.length) as |options|}}
                 {{#list-item-text class="text-center"}}
-                    This project has no data formats
+                    该项目没有数据格式
                 {{/list-item-text}}
             {{/tree-list-item}}
             {{#each project.schemas as |schema|}}
@@ -133,7 +128,7 @@
                     {{#link-to 'projects.project.schema' schema}}
                         {{#if schema.default}}
                             {{#help-icon icon='default-add' placement='right' classes='help-icon indentation-spacer'}}
-                                This Data Format will be used for new samples by default
+                                默认情况下，此数据格式将用于新样例
                             {{/help-icon}}
                         {{else}}
                             {{indentation-spacer}}
@@ -145,16 +140,16 @@
                         {{#list-item-icon-menu icon='vertical-ellipsis' as |options|}}
                             {{#if schema.default}}
                                 <li {{action 'removeSchemaDefault' schema}}><a>
-                                {{list-item-icon class="icon" icon="default-remove"}}Remove as Default
+                                {{list-item-icon class="icon" icon="default-remove"}}删除默认值
                                 </a></li>
                             {{else}}
                                 <li {{action 'setSchemaDefault' schema}}><a>
-                                {{list-item-icon class="icon" icon="default-add"}}Set as Default
+                                {{list-item-icon class="icon" icon="default-add"}}设置默认值
                                 </a></li>
                             {{/if}}
                             {{dropdown-delete
                               onDelete=(action 'removeSchema' schema)
-                              text='Delete Schema'
+                              text='删除Schema'
                               disabled=(gt schema.items.length 0)
                             }}
                         {{/list-item-icon-menu}}
@@ -171,18 +166,18 @@
     {{#tree-list-item }}
         {{#link-to 'projects.project.jobs' project.id }}
             {{#list-item-text class="title"}}
-                Jobs
+                任务
                 {{#animation-container class="inline" setHeight=false}}
                     {{#help-icon}}
-                        Jobs
+                        任务
                         <p>
-                            A job is an running spider in a project, just like a process is a running program.
+                            任务是项目中正在运行的爬虫，就像进程是正在运行的程序一样。
                         </p>
                         <p>
-                            Like process, a job also have some status: pending, running and finished.
+                            与进程一样，任务也有一些状态：挂起，运行和完成。
                         </p>
                         <p>
-                            You can cancel a job if the job is pending, it will be removed. if the job is running, it will be terminated.
+                            如果任务处于待处理状态，您可以取消任务，它将被删除。 如果任务正在运行，它将被终止。
                         </p>
                     {{/help-icon}}
                 {{/animation-container}}
@@ -194,23 +189,22 @@
     {{#tree-list-item }}
         {{#link-to 'projects.project.schedule' project.id }}
             {{#list-item-text class="title"}}
-                Schedules
+                调度
                 {{#animation-container class="inline" setHeight=false}}
                     {{#help-icon}}
-                        Schedules
+                        调度
                         <p>
-                            A schedule is an periodic job which can be running at interrvals of time.
+                            调度是一项定期工作，可以按时间间隔运行。
                         </p>
                         <p>
-                            This is useful for continuously get new items from a web site without human intervention.
+                            这对于在没有人为干预的情况下从网站连续获取新内容非常有用。
                         </p>
                         <p>
-                            You can cancel a schedule if you hope crawling will not run in future.
+                            如果您希望将来不再运行爬网，则可以取消计划。
                         </p>
                     {{/help-icon}}
                 {{/animation-container}}
             {{/list-item-text}}
-
         {{/link-to}}
     {{/tree-list-item}}
 {{/tree-list}}

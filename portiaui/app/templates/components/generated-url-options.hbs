@@ -1,18 +1,18 @@
 {{#list-item-text class="title fragments-title"}}
     Fragments
     {{#help-icon}}
-        Fragments
+        片段
         <p>
-            A generated url is made up of one or more fragments. A fragment can be a single value,
-            a list of different values or a range of numbers.
+            生成的URL由一个或多个片段组成。 片段可以是单个值，
+            不同值的列表或一系列数字。
         </p>
         <p>
-            Using fragments you can create a large number of urls.
+            使用片段你可以创建大量的url
         </p>
     {{/help-icon}}
 {{/list-item-text}}
 
-{{#tooltip-container tooltipFor="add-fragment-button" text="Create a new fragment to generate URLs" tooltipContainer='body'}}
+{{#tooltip-container tooltipFor="add-fragment-button" text="创建一个新片段以生成URL" tooltipContainer='body'}}
     {{list-item-icon
       icon='add'
       id="add-fragment-button"
@@ -31,7 +31,7 @@
     }}
 {{/each}}
 
-<h3 class="start-url-list-title">Generation List</h3>
+<h3 class="start-url-list-title">生成列表</h3>
 <div class="start-url-list form-control {{unless allValidFragments 'has-error'}}">
     <section class="start-url-generation-list">
     {{#each generatedUrlLists as |generatedUrlList|}}
@@ -47,7 +47,7 @@
     {{#if (not isComplete)}}
         {{tooltip-icon
           icon='vertical-ellipsis'
-          text='This list only shows the first few generated urls.'
+          text='此列表仅显示前几个生成的URL'
           modifyClasses='one-half-x full-width'
         }}
     {{/if}}

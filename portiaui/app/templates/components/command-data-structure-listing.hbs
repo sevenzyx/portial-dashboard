@@ -2,7 +2,7 @@
     {{#tree-list-item hasChildren=action.orderedCommands.length as |options|}}
         {{#if (eq options.section "item")}}
             {{#list-item-text class="title"}}
-                Commands
+                命令
             {{/list-item-text}}
             {{!-- list-item-icon icon='add' action=(action 'addCommand' action) --}}
         {{else if (eq options.section "subtrees")}}

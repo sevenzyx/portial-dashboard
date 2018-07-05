@@ -1,5 +1,5 @@
 {{#if showSearch}}
-    {{input-with-clear update=(action "search") clear=(action "clear") placeholder="Search..."}}
+    {{input-with-clear update=(action "search") clear=(action "clear") placeholder="搜索..."}}
     <div class='project-list-items'>
         {{#each filteredProjects as |project|}}
             {{#if isSelecting}}

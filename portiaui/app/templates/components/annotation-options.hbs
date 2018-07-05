@@ -5,7 +5,7 @@
             {{input type="checkbox" name="required" checked=(mut annotation.required)}} Required
         </label>
         {{#help-icon}}
-            Only extract items that have this annotation. Only this sample will be affected
+            只有解析项有这个注释。紧本样将被影响
         {{/help-icon}}
     </div>
     <div class="form-group">
@@ -24,7 +24,7 @@
         </div>
     {{/if}}
     <div class="form-group">
-        <label for="attribute">Source</label>
+        <label for="attribute">源</label>
         {{select-box name="attribute" value=(mut attribute) valueAttribute='name' choices=attributes onChange=(action "save")}}
     </div>
 </form>

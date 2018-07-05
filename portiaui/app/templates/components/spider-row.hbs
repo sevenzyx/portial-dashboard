@@ -14,12 +14,12 @@
         {{#list-item-icon-menu icon='vertical-ellipsis' as |options|}}
             <li>
               <a href={{downloadUrl}} target='_blank'>
-                  {{list-item-icon class="icon" icon="download"}}Download as Portia
+                  {{list-item-icon class="icon" icon="download"}}以爬虫下载
                 </a>
             </li>
             <li>
               <a href={{downloadCodeUrl}} target='_blank'>
-                  {{list-item-icon class="icon" icon="code"}}Download as Scrapy
+                  {{list-item-icon class="icon" icon="code"}}以Scrapy方式下载
                 </a>
             </li>
             {{#if isCopyingSpider}}
@@ -36,21 +36,21 @@
                 {{/options.item}}
             {{/if}}
 
-            <li><a {{action 'runSpider' spider }} > 
-               {{list-item-icon class="icon" icon="play"}} Run this spider
+            <li><a {{action 'runSpider' spider }} >
+               {{list-item-icon class="icon" icon="play"}} 运行该爬虫
                 </a>
             </li>
 
-            <li><a {{action (chain-actions options.closeMenu 
-                  (action 'toggleScheduleOptionsModal' spider) ) }} > 
-               {{list-item-icon class="icon" icon="play"}} Schedule this spider
+            <li><a {{action (chain-actions options.closeMenu
+                  (action 'toggleScheduleOptionsModal' spider) ) }} >
+               {{list-item-icon class="icon" icon="play"}} 调度该爬虫
                 </a>
             </li>
 
 
             {{dropdown-delete
               onDelete=(action 'removeSpider' spider)
-              text='Delete Spider'
+              text='删除爬虫'
             }}
         {{/list-item-icon-menu}}
     {{/animation-container}}
@@ -71,16 +71,16 @@
     {{#modal-dialog close="toggleScheduleOptionsModal" targetAttachment="center" translucentOverlay=true}}
         <h3>Schedule Options</h3>
         <div class="form-group">
-            <label for="interval">Interval</label>
+            <label for="interval">间隔</label>
             {{input type="text" class="form-control" id="interval" value=interval }}
         </div>
 
         <div class="form-group">
-            <label for="times">Times</label>
+            <label for="times">次数</label>
             {{input type="text" class="form-control" id="times" value=times }}
         </div>
 
-        <button type="submit" class="btn btn-primary" {{action "scheduleSpider"}}>Submit</button>
+        <button type="submit" class="btn btn-primary" {{action "scheduleSpider"}}>提交</button>
     {{/modal-dialog}}
 
 {{/if}}

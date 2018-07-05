@@ -1,21 +1,22 @@
 {{#if editableAction }}
     {{#link-to 'projects.project.spider.action' editableAction class="btn btn-primary"}}
-        {{icon-button icon='action'}} Edit action 
+        {{icon-button icon='action'}} Edit action
     {{/link-to}}
 {{else}}
     {{#tooltip-container tooltipFor="add-spider-action-button" tooltipContainer='body' as |options|}}
         {{#if (eq options.section 'tooltip')}}
             {{#unless editableAction}}
-                Create a new action from the current page so you can interact with the page, such as click or input. 
+                从当前页面中创建一个新的动作，可以用于页面交互比如点击或输入
                 {{#unless sameDomain}}
                     <p>
+                        这个页面链到与当前爬虫不同的域名。可以创建一个新的爬虫抓取。
                         This page is from a different domain to your spider. Maybe you would like to create a new spider for this page?
                     </p>
                 {{/unless}}
             {{/unless}}
         {{else}}
             <button id="add-spider-action-button" type="button" class="btn btn-primary" disabled={{disableAction}} {{action "addAction"}}>
-                {{icon-button icon='action'}} New action 
+                {{icon-button icon='action'}} 新建动作
             </button>
         {{/if}}
     {{/tooltip-container}}

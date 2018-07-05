@@ -1,21 +1,21 @@
 {{#if editableSample}}
     {{#link-to 'projects.project.spider.sample' editableSample class="btn btn-primary"}}
-        {{icon-button icon='sample'}} Edit sample
+        {{icon-button icon='sample'}} 编辑样例
     {{/link-to}}
 {{else}}
     {{#tooltip-container tooltipFor="add-spider-sample-button" tooltipContainer='body' as |options|}}
         {{#if (eq options.section 'tooltip')}}
             {{#unless editableSample}}
-                Create a new sample from the current page so you can start annotating the data you want to extract
+                从当前页面中创建新样例，标注希望解析的数据
                 {{#unless sameDomain}}
                     <p>
-                        This spider is from a different domain to your spider. Maybe you would like to create a new spider for this sample?
+                        这个页面与您爬虫的域名不同，可以为当前样例创建一个新的爬虫
                     </p>
                 {{/unless}}
             {{/unless}}
         {{else}}
             <button id="add-spider-sample-button" type="button" class="btn btn-primary" disabled={{disableSample}} {{action "addSample"}}>
-                {{icon-button icon='sample'}} New sample
+                {{icon-button icon='sample'}} 新建样例
             </button>
         {{/if}}
     {{/tooltip-container}}

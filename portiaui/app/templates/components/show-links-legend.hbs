@@ -1,14 +1,14 @@
 {{#tree-list}}
     {{#tree-list-item as |options|}}
         {{list-item-badge value=followedLinks color=colors.green}}
-        Followed
+        爬取
     {{/tree-list-item}}
     {{#tree-list-item as |options|}}
         {{list-item-badge value=jsLinks color=colors.blue}}
-        Followed when Javascript is enabled
+        Javascript打开时爬取
     {{/tree-list-item}}
     {{#tree-list-item as |options|}}
         {{list-item-badge value=ignoredLinks color=colors.red}}
-        Not Followed
+        不爬取
     {{/tree-list-item}}
 {{/tree-list}}
