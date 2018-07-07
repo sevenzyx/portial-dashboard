@@ -14,7 +14,7 @@
             {{websocket.reconnectMessage}}
         {{/if}}
         {{#unless webSocket.reconnectImminent}}
-            <a class="alert-link" {{action 'reconnectWebsocket'}}>重试</a>.
+            <a class="alert-link" {{action 'reconnectWebsocket'}}>重试</a>
         {{/unless}}
     {{else if webSocket.reconnectComponent}}
         {{component webSocket.reconnectComponent}}
@@ -28,7 +28,7 @@
 </div>
 
 <div class="browser-start-page {{if browser.url 'hide'}}">
-    <!-<img src="/assets/images/portia-logo.svg" alt="Portia logo">->
+    <!--<img src="/assets/images/portia-logo.svg" alt="Portia logo">-->
     <h3>请输入希望爬取的链接?</h3>
     {{url-bar class="navbar-form" role="navigation" autofocus=true}}
     {{#if uiState.models.project.spiders.length}}
