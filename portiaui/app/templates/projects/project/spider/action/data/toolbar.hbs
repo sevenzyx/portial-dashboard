@@ -5,7 +5,7 @@
     {{#if playing }}
         {{#tooltip-container tooltipFor="stop-playback-tool-button" placement='left' tooltipContainer='body' as |options| }}
             {{#if (eq options.section 'tooltip')}}
-                Stop play
+                停止播放
             {{else}}
                 <button id="stop-playback-tool-button" type="button" class="btn btn-default" disabled={{recording}} {{action 'stopPlayback'}}>
                     {{icon-button icon='stop-playback'}}
@@ -15,9 +15,9 @@
     {{else}}
         {{#tooltip-container tooltipFor="playback-tool-button" placement='left' tooltipContainer='body' as |options| }}
             {{#if (eq options.section 'tooltip')}}
-                Play back
+                回放
                 <p>
-                    When play back button is clicked, the commands recorded will be play back.
+                    单击播放按钮时，将播放录制的命令
                 </p>
             {{else}}
                 <button id="playback-tool-button" type="button" class="btn btn-default" disabled={{recording}} {{action 'startPlayback'}}>
@@ -30,7 +30,7 @@
     {{#if recording }}
         {{#tooltip-container tooltipFor="stop-record-tool-button" placement='left' tooltipContainer='body' as |options| }}
             {{#if (eq options.section 'tooltip')}}
-                Stop record
+                停止录制
             {{else}}
                 <button id="stop-record-tool-button" type="button" class="btn btn-default" disabled={{playing}} {{action 'stopRecord'}}>
                     {{icon-button icon='stop-record'}}
@@ -40,9 +40,9 @@
     {{else}}
         {{#tooltip-container tooltipFor="record-tool-button" placement='left' tooltipContainer='body' as |options| }}
             {{#if (eq options.section 'tooltip')}}
-                Start record
+                开始录制
                 <p>
-                    When record button is clicked, user interaction with current page will be recorded as commands of current action.
+                    单击录制按钮时，用户与当前页面的交互将被记录为当前操作的命令。
                 </p>
             {{else}}
                 <button id="record-tool-button" type="button" class="btn btn-default" disabled={{playing}} {{action 'startRecord'}}>

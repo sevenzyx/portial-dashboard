@@ -6,14 +6,11 @@
             {{#if (eq options.section 'tooltip')}}
                 Toggle page styling
                 <p>
-                    When page styling is enabled you see the web page as the page author intended,
-                    the same way it would appear in a browser. However, sometimes this makes it hard
-                    to select the data that you need, for example if there are overlapping parts of
-                    the page or if some parts are hidden.
+                    启用页面样式后，您将看到页面作者期望展示的网页，与浏览器中显示的方式相同。 但是，
+                    有时这会使您难以选择所需的数据，例如，如果页面存在重叠部分或者某些部分是隐藏的。
                 </p>
                 <p>
-                    You can disable the page styling which will change the look and layout of the
-                    page but will force all content within the page to become visible.
+                    您可以禁用页面样式，这将更改页面的外观和布局，但会强制页面中的所有内容都可见。
                 </p>
             {{else}}
                 <button id="css-tool-button" type="button" class="btn btn-default {{if cssEnabled 'active'}}" {{action 'toggleCSS'}}>
@@ -26,19 +23,15 @@
     <div class="btn-group" role="group">
         {{#tooltip-container tooltipFor="magic-tool-button" placement='left' tooltipContainer='body' as |options| }}
             {{#if (eq options.section 'tooltip')}}
-                Magic tool selector
+                魔术工具选择器
                 <p>
-                    When the magic tool selector is enabled, it will attempt to choose the most
-                    useful tool for you automatically, based on the element you are pointing at in
-                    the web page.
+                    启用魔术工具选择器后，它将根据您在网页中指向的元素，尝试自动为您选择最有用的工具。
                 </p>
                 <p>
-                    You can see which tool is being selected for you by looking at enabled tool
-                    selection button, and at the icon visible on the element under the cursor.
+                    您可以通过查看启用的工具选择按钮以及光标下元素上可见的图标来查看为您选择的工具。
                 </p>
                 <p>
-                    If you need, you can manually change the tool for the next click, by switching
-                    to it using the tool selection buttons.
+                    如果需要，可以使用工具选择按钮切换到下一次单击，来手动更改工具。
                 </p>
             {{else}}
                 <button id="magic-tool-button" type="button" class="btn btn-default {{if magicToolActive 'active'}}" {{action 'toggleMagicTool'}}>
