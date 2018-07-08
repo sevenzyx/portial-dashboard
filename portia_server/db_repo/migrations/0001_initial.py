@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Refs',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID',max_length=256)),
                 ('ref', models.CharField(default='', max_length=100)),
                 ('repo', models.CharField(max_length=64)),
                 ('value', db_repo.models.RealBinaryField(db_index=True, max_length=40)),
