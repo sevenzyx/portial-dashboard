@@ -6,15 +6,13 @@
                 {{#help-icon}}
                     字段
                     <p>
-                        A field describes the type of a value that you want to extract.
+                        字段描述要提取的值的类型。
                     </p>
                     <p>
-                        Sample pages map the elements of a web page to the individual fields of a
-                        data format.
+                        样例页面将网页的元素映射到数据格式的各个字段。
                     </p>
                     <p>
-                        You can create fields in advance, but you can also create them later, while
-                        annotating the data on a web page.
+                        您可以提前创建字段，但也可以稍后创建字段，同时在网页上标注数据。
                     </p>
                 {{/help-icon}}
             {{/list-item-text}}
@@ -24,7 +22,7 @@
         {{else if (eq options.section "subtrees")}}
             {{#tree-list-item hide=(or schema.fields.isPending schema.fields.length) as |options|}}
                 {{#list-item-text class="text-center"}}
-                    This data format has no fields
+                    该数据格式没有字段
                 {{/list-item-text}}
             {{/tree-list-item}}
             {{#each schema.fields as |field|}}

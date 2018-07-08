@@ -11,27 +11,23 @@ export default Ember.Component.extend(SaveSpiderMixin, {
     followPatternOptions: [
         {
             value: 'auto',
-            label: 'Follow links automatically',
-            description: `Use start urls and sample urls to teach the spider the \
-                          best links to follow`
+            label: '自动爬取链接',
+            description: `使用开始网址和示例网址向爬虫传授最佳链接`
         },
         {
             value: 'all',
-            label: 'Follow all in-domain links',
-            description: `Follow all links which have a domain or sub domain that match \
-                          the start or sample urls`
+            label: '爬取域名下的所有链接',
+            description: `爬取具有与起始或示例网址匹配的域或子域的所有链接`
         },
         {
             value: 'none',
-            label: "Don't follow links",
-            description: `Only attempt to extract data from start urls. Can be combined \
-                          to great effect with feed and generated urls`
+            label: "不爬取链接",
+            description: `仅尝试从开始URL提取数据。可以与feed和生成的url结合使用效果很好`
         },
         {
             value: 'patterns',
-            label: 'Configure url patterns',
-            description: `Create patterns for the spider to follow or not and direct your \
-                          spider with pin point accuracy`
+            label: '配置URL模式',
+            description: `为爬虫创建模式以遵循或不遵循，并以引脚点精度指导您的爬虫`
         },
     ],
 

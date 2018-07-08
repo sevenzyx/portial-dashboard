@@ -9,8 +9,19 @@ ITEM_PIPELINES = {
     #'slybot.django-dupefilter.DjangoDupeFilterPipeline': 1,
     'slybot.meta.DropMetaPipeline': 2,
     #'slybot.image-pipeline.MyImagesPipeline' : 50,
-    'slybot.django-pipeline.DjangoPipeline':100 ,
+  'slybot.django-pipeline.DjangoPipeline':100 ,
+  'scrapyelasticsearch.scrapyelasticsearch.ElasticSearchPipeline': 500,
+
 }
+
+ELASTICSEARCH_SERVERS = ['10.0.0.168:9200']
+ELASTICSEARCH_INDEX = 'scrapy'
+ELASTICSEARCH_INDEX_DATE_FORMAT = '%Y-%m'
+ELASTICSEARCH_TYPE = 'items'
+ELASTICSEARCH_UNIQ_KEY = 'url'  # Custom unique key
+
+# can also accept a list of fields if need a composite key
+ELASTICSEARCH_UNIQ_KEY = ['url', 'id']
 
 #IMAGES_STORE = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../articles'))
 #IMAGES_URLS_FIELD = 'body'
@@ -19,8 +30,8 @@ ITEM_PIPELINES = {
 #REFERRER_POLICY = "scrapy.spidermiddlewares.referer.OriginWhenCrossOriginPolicy"
 SPIDER_MIDDLEWARES = {
     'slybot.spiderlets.SpiderletsMiddleware': 999, # as close as possible to spider output
-    #'scrapy.spidermiddlewares.referer.RefererMiddleware':100 
-}  
+    #'scrapy.spidermiddlewares.referer.RefererMiddleware':100
+}
 
 SPLASH_URL = "http://localhost:8050/render.html"
 #SPLASH_COOKIES_DEBUG = True
@@ -58,7 +69,7 @@ AUTOTHROTTLE_MAX_DELAY = 60
 # each remote server
 AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
 # Enable showing throttling stats for every response received:
-AUTOTHROTTLE_DEBUG = True 
+AUTOTHROTTLE_DEBUG = True
 
 
 try:
